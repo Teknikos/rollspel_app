@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             ),
             body: TabBarView(children: [
               Spells(title: 'Spells'),
-              Feats(),
+              Feats(title: 'Feats'),
               Icon(Icons.map_outlined)
             ]),
           ),

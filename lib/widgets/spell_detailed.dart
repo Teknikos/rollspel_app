@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rollspel_app/widgets/class_images.dart';
 import '../models/spell.dart';
 
 class SpellDetailed extends StatelessWidget {

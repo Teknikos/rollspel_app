@@ -20,6 +20,24 @@ class _SpellsState extends State<Spells> {
   bool isLoading = true;
   List<Spell> _spellList = [];
   Spell? _selectedSpell;
+  Spell initialSpell = Spell(
+      name: 'No spell selected',
+      tags: [],
+      type: '',
+      ritual: false,
+      level: '',
+      school: '',
+      castingTime: '',
+      range: '',
+      components: Components(
+          verbal: false,
+          somatic: false,
+          material: false,
+          raw: '',
+          materialsNeeded: []),
+      duration: '',
+      description: '',
+      classes: []);
 
   @override
   void initState() {
@@ -81,26 +99,7 @@ class _SpellsState extends State<Spells> {
         children: [
           Expanded(
             child: SpellDetailed(
-              cantrip: _selectedSpell != null
-                  ? _selectedSpell!
-                  : Spell(
-                      name: 'No spell selected',
-                      tags: [],
-                      type: '',
-                      ritual: false,
-                      level: '',
-                      school: '',
-                      castingTime: '',
-                      range: '',
-                      components: Components(
-                          verbal: false,
-                          somatic: false,
-                          material: false,
-                          raw: '',
-                          materialsNeeded: []),
-                      duration: '',
-                      description: '',
-                      classes: []),
+              cantrip: _selectedSpell != null ? _selectedSpell! : initialSpell,
             ),
           ),
           isLoading
